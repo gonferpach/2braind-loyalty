@@ -24,7 +24,7 @@ import KitchenDisplayPage from '../modules/camarero/pages/admin/camarero/Kitchen
 import MenuManagementPage from '../modules/camarero/pages/admin/camarero/MenuManagementPage';
 import WaiterOrderManagementPage from '../modules/camarero/pages/admin/camarero/WaiterOrderManagementPage';
 import WaiterPickupPage from '../modules/camarero/pages/admin/camarero/WaiterPickupPage';
-// Módulo LoyalPyME
+// Módulo 2Braind Loyalty
 import CustomerDashboardPage from '../modules/loyalpyme/pages/CustomerDashboardPage';
 import AdminOverview from '../modules/loyalpyme/pages/admin/AdminOverview';
 import AdminRewardsManagement from '../modules/loyalpyme/pages/admin/AdminRewardsManagement';

@@ -41,7 +41,7 @@ const Logo: React.FC<{ homePath: string }> = ({ homePath }) => (
     >
         <img
             src="/loyalpymelogo.jpg"
-            alt="LoyalPyME Logo"
+            alt="2Braind Loyalty Logo"
             style={{ height: '40px', width: 'auto', display: 'block' }}
         />
     </Link>

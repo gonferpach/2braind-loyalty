@@ -37,14 +37,14 @@ const HomePage: React.FC = () => {
                 <Stack align="center" gap="xl">
                     <img
                         src="/loyalpymelogo.jpg"
-                        alt="LoyalPyME Logo"
+                        alt="2Braind Loyalty Logo"
                         style={{ height: '90px', width: 'auto' }}
                     />
                     <Title order={1} ta="center" maw={700}>
                         {t('homePage.heroTitle', 'Fideliza Clientes y Digitaliza tu Servicio. Todo en un Mismo Lugar.')}
                     </Title>
                     <Text size="xl" c="dimmed" ta="center" maw={600}>
-                        {t('homePage.heroSubtitle', 'LoyalPyME es la plataforma definitiva para que restaurantes, cafeterías y PYMES creen programas de lealtad y optimicen su operativa con una carta digital inteligente.')}
+                        {t('homePage.heroSubtitle', '2Braind Loyalty es la plataforma definitiva para que restaurantes, cafeterías y PYMES creen programas de lealtad y optimicen su operativa con una carta digital inteligente.')}
                     </Text>
 
                     <Group mt="xl" justify="center">
@@ -116,7 +116,7 @@ const HomePage: React.FC = () => {
                                  {t('homePage.finalCta.title', '¿Listo para empezar?')}
                              </Title>
                              <Text maw={500}>
-                                 {t('homePage.finalCta.desc', 'Crea tu cuenta hoy mismo y descubre cómo LoyalPyME puede transformar tu negocio.')}
+                                 {t('homePage.finalCta.desc', 'Crea tu cuenta hoy mismo y descubre cómo 2Braind Loyalty puede transformar tu negocio.')}
                              </Text>
                          </Stack>
                          <Button
