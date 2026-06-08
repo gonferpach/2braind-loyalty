@@ -85,7 +85,7 @@ const ShoppingCartModal: React.FC<ShoppingCartModalProps> = ({
                                                         {item.selectedModifiers.map(mod => (
                                                             <Text key={mod.modifierOptionId} size="xs" c="dimmed">
                                                                 + {(currentLanguage === 'es' && mod.name_es ? mod.name_es : mod.name_en || mod.name_es)}
-                                                                {mod.priceAdjustment !== 0 && ` (${mod.priceAdjustment > 0 ? '+' : ''}${mod.priceAdjustment.toFixed(2)}€)`}
+                                                                {mod.priceAdjustment !== 0 && ` (${mod.priceAdjustment > 0 ? '+' : ''}${mod.priceAdjustment.toFixed(2)}S/)`}
                                                             </Text>
                                                         ))}
                                                     </Box>
@@ -94,7 +94,7 @@ const ShoppingCartModal: React.FC<ShoppingCartModalProps> = ({
                                             </Box>
                                             <Stack align="flex-end" gap={4} style={{ flexShrink: 0 }}>
                                                 <Text fw={500} size="sm" style={{ textDecoration: isRedeemedItem ? 'line-through' : 'none' }}>
-                                                    {item.totalPriceForItem.toLocaleString(currentLanguage, { style: 'currency', currency: 'EUR' })}
+                                                    {item.totalPriceForItem.toLocaleString(currentLanguage, { style: 'currency', currency: 'PEN' })}
                                                 </Text>
                                                 <Group gap="xs" wrap="nowrap">
                                                     <ActionIcon variant="default" size="sm" onClick={() => handleQuantityChange(item.cartItemId, item.quantity - 1)} disabled={item.quantity <= 1 || isSubmittingOrder || isRedeemedItem}><IconCircleMinus size={16} /></ActionIcon>
@@ -119,7 +119,7 @@ const ShoppingCartModal: React.FC<ShoppingCartModalProps> = ({
 
                 <Group justify="flex-end" mt="sm">
                     <Text fw={700} size="lg">{t(isAddingToExistingOrder ? 'publicMenu.cart.totalAddItems' : 'publicMenu.cart.totalOrder')}</Text>
-                    <Text fw={700} size="lg">{totalAmount.toLocaleString(currentLanguage, { style: 'currency', currency: 'EUR' })}</Text>
+                    <Text fw={700} size="lg">{totalAmount.toLocaleString(currentLanguage, { style: 'currency', currency: 'PEN' })}</Text>
                 </Group>
 
                 <Group justify="flex-end" mt="xl">

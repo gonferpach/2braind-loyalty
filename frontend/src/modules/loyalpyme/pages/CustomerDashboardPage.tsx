@@ -100,7 +100,7 @@ function CustomerDashboardPage() {
         if (!nextTier) { return { progressBarData: { type: 'max_level', currentTierName: currentTier?.name || t('customerDashboard.baseTier') }, nextTierName: null, nextTierBenefits: [] }; }
         let unit = ''; let currentMetricValue = 0;
         switch (businessConfig.tierCalculationBasis) {
-            case TierCalculationBasis.SPEND: unit = '€'; currentMetricValue = userData.totalSpend ?? 0; break;
+            case TierCalculationBasis.SPEND: unit = 'S/'; currentMetricValue = userData.totalSpend ?? 0; break;
             case TierCalculationBasis.VISITS: unit = t('customerDashboard.progressUnitVisits'); currentMetricValue = userData.totalVisits ?? 0; break;
             case TierCalculationBasis.POINTS_EARNED: unit = t('common.points'); currentMetricValue = userData.points ?? 0; break;
         }
@@ -108,7 +108,7 @@ function CustomerDashboardPage() {
         const range = Math.max(0.01, nextTier.minValue - currentTierMinValue);
         const progressInTier = Math.max(0, currentMetricValue - currentTierMinValue);
         const percentage = Math.max(0, Math.min(100, (progressInTier / range) * 100));
-        const formatOptions = { maximumFractionDigits: unit === '€' ? 2 : 0 };
+        const formatOptions = { maximumFractionDigits: unit === 'S/' ? 2 : 0 };
         const currentValueLabel = currentMetricValue.toLocaleString(undefined, formatOptions);
         const targetValueLabel = nextTier.minValue.toLocaleString(undefined, formatOptions);
         return { progressBarData: { type: 'progress', percentage, currentValueLabel, targetValueLabel, unit, nextTierName: nextTier.name }, nextTierName: nextTier.name, nextTierBenefits: nextTier.benefits ?? [] };

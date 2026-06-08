@@ -161,7 +161,7 @@ const ModifierOptionsManagementModal: React.FC<ModifierOptionsManagementModalPro
                     {optionDisplayName !== option.name_en && option.name_en && <Text size="xs" c="dimmed">EN: {option.name_en}</Text>}
                 </Table.Td>
                 <Table.Td ta="right">
-                    {option.priceAdjustment.toLocaleString(undefined, { style: 'currency', currency: 'EUR' })}
+                    {option.priceAdjustment.toLocaleString(undefined, { style: 'currency', currency: 'PEN' })}
                 </Table.Td>
                 <Table.Td>{option.position}</Table.Td>
                 <Table.Td>{option.isDefault ? t('common.yes') : t('common.no')}</Table.Td>

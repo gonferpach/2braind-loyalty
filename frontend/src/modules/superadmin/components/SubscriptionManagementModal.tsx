@@ -48,7 +48,7 @@ const SubscriptionManagementModal: React.FC<SubscriptionManagementModalProps> = 
     const [loadingPeriods, setLoadingPeriods] = useState(false);
 
     const priceForm = useForm<PriceFormValues>({
-        initialValues: { monthlyPrice: 0, currency: 'EUR' },
+        initialValues: { monthlyPrice: 0, currency: 'PEN' },
         validate: zodResolver(priceFormSchema),
     });
 
@@ -164,7 +164,7 @@ const SubscriptionManagementModal: React.FC<SubscriptionManagementModalProps> = 
                             <Text size="sm">Establece el precio mensual que se le cobrará a este negocio.</Text>
                             <Group grow align="flex-end">
                                 <NumberInput label="Precio Mensual" required min={0} decimalScale={2} {...priceForm.getInputProps('monthlyPrice')} />
-                                <Select label="Moneda" data={['EUR', 'USD']} required {...priceForm.getInputProps('currency')} />
+                                <Select label="Moneda" data={['PEN', 'USD']} required {...priceForm.getInputProps('currency')} />
                             </Group>
                             <Group justify="flex-end" mt="md">
                                 <Button type="submit" leftSection={<IconDeviceFloppy size={16}/>} loading={isSaving}>Guardar Precio</Button>
@@ -217,7 +217,7 @@ const SubscriptionManagementModal: React.FC<SubscriptionManagementModalProps> = 
                                             <Table.Tr key={p.id}>
                                                 <Table.Td>{new Date(p.paymentDate).toLocaleDateString(i18n.language)}</Table.Td>
                                                 <Table.Td>{`${p.month}/${p.year}`}</Table.Td>
-                                                <Table.Td ta="right">{p.amountPaid.toLocaleString(i18n.language, { style: 'currency', currency: 'EUR' })}</Table.Td>
+                                                <Table.Td ta="right">{p.amountPaid.toLocaleString(i18n.language, { style: 'currency', currency: 'PEN' })}</Table.Td>
                                             </Table.Tr>
                                         ))}
                                     </Table.Tbody>

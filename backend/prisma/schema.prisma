@@ -173,7 +173,7 @@ model Business {
   isLoyaltyCoreActive       Boolean               @default(false)
   isCamareroActive          Boolean               @default(false)
   monthlyPrice              Decimal?              @default(0.00) @db.Decimal(10, 2)
-  currency                  String                @default("EUR")
+  currency                  String                @default("PEN")
   users                     User[]
   rewards                   Reward[]
   qrCodes                   QrCode[]

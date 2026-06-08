@@ -24,6 +24,7 @@ import waiterRouter from './waiter.routes';
 import businessRouter from './businesses.routes';
 import publicMenuRouter from './public-menu.routes';
 import publicOrderRouter from './public-order.routes';
+import documentValidationRouter from './document-validation.routes';
 
 // Router para las rutas /api
 const apiRouter = Router();
@@ -53,6 +54,7 @@ apiRouter.use('/customer', checkRole([UserRole.CUSTOMER_FINAL]), customerRouter)
 apiRouter.use('/tiers', checkRole([UserRole.BUSINESS_ADMIN]), tierRouter);
 apiRouter.use('/admin', checkRole([UserRole.BUSINESS_ADMIN]), adminRouter);
 apiRouter.use('/uploads', checkRole([UserRole.BUSINESS_ADMIN, UserRole.SUPER_ADMIN]), uploadsRouter);
+apiRouter.use('/validate-document', documentValidationRouter);
 
 // Router para las rutas /public (sin cambios)
 const publicRouterApi = Router();

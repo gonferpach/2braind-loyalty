@@ -32,7 +32,7 @@ const PurchaseHistoryTab: React.FC = () => {
     };
 
     const formatCurrency = (value: number) => {
-        return value.toLocaleString(i18n.language, { style: 'currency', currency: 'EUR' });
+        return value.toLocaleString(i18n.language, { style: 'currency', currency: 'PEN' });
     };
 
     const formatDate = (dateString: string | null) => {

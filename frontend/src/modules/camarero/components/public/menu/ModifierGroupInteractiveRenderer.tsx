@@ -42,7 +42,7 @@ const ModifierGroupInteractiveRenderer: React.FC<ModifierGroupInteractiveRendere
             {i18n.language === 'es' && option.name_es ? option.name_es : option.name_en || option.name_es}
             {option.priceAdjustment !== 0 && (
                 <Text span c={option.priceAdjustment > 0 ? "teal.7" : "pink.7"} ml={5} fz="xs">
-                    ({option.priceAdjustment > 0 ? '+' : ''}{option.priceAdjustment.toFixed(2)}€)
+                    ({option.priceAdjustment > 0 ? '+' : ''}{option.priceAdjustment.toFixed(2)}S/)
                 </Text>
             )}
         </>

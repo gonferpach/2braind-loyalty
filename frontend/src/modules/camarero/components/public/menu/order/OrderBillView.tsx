@@ -19,7 +19,7 @@ const OrderBillView: React.FC<OrderBillViewProps> = ({ orderData }) => {
   const { items, totalAmount, discountAmount, finalAmount } = orderData;
 
   const formatCurrency = (value: number) => {
-    return value.toLocaleString(currentLanguage, { style: 'currency', currency: 'EUR' });
+    return value.toLocaleString(currentLanguage, { style: 'currency', currency: 'PEN' });
   };
 
   return (

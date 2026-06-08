@@ -68,7 +68,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                     {/* --- LÓGICA DE DOBLE BOTÓN --- */}
                     <Group mt="md" justify="flex-end" align="center">
                         <Text fw={700} fz="lg" c="blue.7">
-                            {item.price.toLocaleString(currentLanguage, { style: 'currency', currency: 'EUR' })}
+                            {item.price.toLocaleString(currentLanguage, { style: 'currency', currency: 'PEN' })}
                         </Text>
                         
                         <Group gap="xs">

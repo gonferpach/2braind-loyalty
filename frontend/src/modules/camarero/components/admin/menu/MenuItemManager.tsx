@@ -140,7 +140,7 @@ const MenuItemManager: React.FC<MenuItemManagerProps> = ({ categoryId /*, catego
                     {displayName !== item.name_es && item.name_es && <Text size="xs" c="dimmed">ES: {item.name_es}</Text>}
                     {displayName !== item.name_en && item.name_en && <Text size="xs" c="dimmed">EN: {item.name_en}</Text>}
                 </Table.Td>
-                <Table.Td ta="right">{Number(item.price).toLocaleString(currentLanguage, { style: 'currency', currency: 'EUR' })}</Table.Td>
+                <Table.Td ta="right">{Number(item.price).toLocaleString(currentLanguage, { style: 'currency', currency: 'PEN' })}</Table.Td>
                 <Table.Td>{item.position}</Table.Td>
                 <Table.Td>
                     <Badge color={item.isAvailable ? 'green' : 'gray'} variant="light">

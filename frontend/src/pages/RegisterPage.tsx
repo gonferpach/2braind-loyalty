@@ -14,7 +14,7 @@ import { IconCheck, IconX } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 
 // Los enums y la interfaz de formulario se quedan igual
-enum DocumentType { DNI = 'DNI', NIE = 'NIE', PASSPORT = 'PASSPORT', OTHER = 'OTHER' }
+enum DocumentType { DNI = 'DNI', RUC = 'RUC', PASSPORT = 'PASSPORT', OTHER = 'OTHER' }
 enum UserRole { BUSINESS_ADMIN = 'BUSINESS_ADMIN', CUSTOMER_FINAL = 'CUSTOMER_FINAL' }
 
 interface RegisterFormValues {
@@ -29,6 +29,7 @@ const RegisterPage: React.FC = () => {
     const role: UserRole = UserRole.CUSTOMER_FINAL;
     const [isLoading, setIsLoading] = useState(false);
     const documentTypeOptions = Object.values(DocumentType).map(value => ({ value, label: value }));
+    const [validatingDoc, setValidatingDoc] = useState(false);
     const [businesses, setBusinesses] = useState<BusinessOption[]>([]);
     const [loadingBusinesses, setLoadingBusinesses] = useState<boolean>(true);
     const [errorBusinesses, setErrorBusinesses] = useState<string | null>(null);
@@ -46,8 +47,8 @@ const RegisterPage: React.FC = () => {
             documentType: (value) => (value ? null : t('registerPage.errorDocType')),
             documentId: (value, values) => {
                  if (!value) return t('common.requiredField');
-                 if (values.documentType === DocumentType.DNI && !/^\d{8}[A-Z]$/i.test(value)) return t('registerPage.errorDNIFormat');
-                 if (values.documentType === DocumentType.NIE && !/^[XYZ]\d{7}[A-Z]$/i.test(value)) return t('registerPage.errorNIEFormat');
+                 if (values.documentType === DocumentType.DNI && !/^\d{8}$/.test(value)) return 'DNI debe tener 8 dígitos numéricos';
+                 if (values.documentType === DocumentType.RUC && !/^\d{11}$/.test(value)) return 'RUC debe tener 11 dígitos numéricos';
                  return null;
             },
             businessId: (value) => (value ? null : t('registerPage.errorBusinessRequired')),
@@ -136,8 +137,8 @@ const RegisterPage: React.FC = () => {
                              required disabled={isLoading} {...form.getInputProps('confirmPassword')} />
                          <TextInput
                              label={t('registerPage.nameLabel')}
-                             placeholder={t('registerPage.namePlaceholder')}
-                             disabled={isLoading} {...form.getInputProps('name')} />
+                             placeholder={validatingDoc ? 'Consultando...' : t('registerPage.namePlaceholder')}
+                             disabled={isLoading || validatingDoc} {...form.getInputProps('name')} />
                          <TextInput
                              label={t('registerPage.phoneLabel')}
                              placeholder={t('registerPage.phonePlaceholder')}
@@ -149,7 +150,34 @@ const RegisterPage: React.FC = () => {
                          <TextInput
                              label={t('registerPage.docIdLabel')}
                              placeholder={t('registerPage.docIdPlaceholder')}
-                             required disabled={isLoading} {...form.getInputProps('documentId')} />
+                             required disabled={isLoading || validatingDoc}
+                             rightSection={validatingDoc ? <Loader size="xs" /> : null}
+                             onBlur={async (e) => {
+                                 const docId = e.currentTarget.value.replace(/[^0-9]/g, '');
+                                 const docType = form.values.documentType;
+                                 if (!docId || (docType === DocumentType.DNI && docId.length !== 8) && (docType === DocumentType.RUC && docId.length !== 11)) return;
+                                 if (docType !== DocumentType.DNI && docType !== DocumentType.RUC) return;
+                                 setValidatingDoc(true);
+                                 try {
+                                     const res = await axiosInstance.post('/validate-document', { documentId: docId });
+                                     if (res.data?.success) {
+                                         const name = res.data.fullName || res.data.businessName || '';
+                                         if (name) form.setFieldValue('name', name);
+                                         notifications.show({
+                                             title: 'Documento validado',
+                                             message: res.data.type === 'DNI' ? `RENIEC: ${name}` : `SUNAT: ${name}`,
+                                             color: 'teal', icon: <IconCheck size={18} />, autoClose: 3000,
+                                         });
+                                     }
+                                 } catch (err: any) {
+                                     notifications.show({
+                                         title: 'Validación',
+                                         message: err?.response?.data?.message || 'No se pudo validar el documento',
+                                         color: 'orange', autoClose: 4000,
+                                     });
+                                 } finally { setValidatingDoc(false); }
+                             }}
+                             {...form.getInputProps('documentId')} />
                          <Select
                              label={t('registerPage.businessLabel')}
                              placeholder={loadingBusinesses ? t('registerPage.businessSelectLoading') : t('registerPage.businessSelectPlaceholder')}

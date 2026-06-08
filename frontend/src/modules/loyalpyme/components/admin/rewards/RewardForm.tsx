@@ -212,7 +212,7 @@ const RewardForm: React.FC<RewardFormProps> = ({ onSubmitSuccess, onCancel, init
     ];
 
     const discountTypeOptions = [
-        { value: DiscountType.FIXED_AMOUNT, label: 'Importe Fijo (€)' },
+        { value: DiscountType.FIXED_AMOUNT, label: 'Importe Fijo (S/)' },
         { value: DiscountType.PERCENTAGE, label: 'Porcentaje (%)' },
     ];
     

@@ -139,7 +139,7 @@ const WaiterOrderManagementPage: React.FC = () => {
                 <Table.Td>{order.orderNumber}</Table.Td>
                 <Table.Td>{order.tableIdentifier || 'N/A'}</Table.Td>
                 <Table.Td ta="right">
-                    {order.finalAmount.toLocaleString(currentLanguage, { style: 'currency', currency: 'EUR' })}
+                    {order.finalAmount.toLocaleString(currentLanguage, { style: 'currency', currency: 'PEN' })}
                 </Table.Td>
                 <Table.Td>
                     <Badge color={getStatusBadgeColor(order.status)} variant="light">
