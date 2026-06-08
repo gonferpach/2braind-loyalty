@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
             <Container size="lg" py={{ base: 'xl', md: '5rem' }}>
                 <Stack align="center" gap="xl">
                     <img
-                        src="/loyalpymelogo.jpg"
+                        src="/2braind-loyalty-logo.jpg"
                         alt="2Braind Loyalty Logo"
                         style={{ height: '90px', width: 'auto' }}
                     />

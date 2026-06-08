@@ -72,7 +72,7 @@
     "goToMenuButton": "View Menu"
   },
   "registerPage": {
-    "welcomeTitle": "Welcome to LoyalPyME!",
+    "welcomeTitle": "Welcome to 2Braind Loyalty!",
     "title": "Create Your Customer Account",
     "subtitle": "Already have an account?",
     "loginLink": "Login",
@@ -293,7 +293,7 @@
     "deleteError": "Error deleting",
     "confirmDeleteTitle": "Confirm Deletion",
     "confirmDeleteMessage": "Are you sure? This action cannot be undone.",
-    "adminTitle": "LoyalPyME Admin"
+    "adminTitle": "2Braind Loyalty Admin"
   },
   "adminOverview": {
     "welcome": "Welcome, {{name}}!",
@@ -659,14 +659,14 @@
     "noBusinesses": "No businesses registered.",
     "tooltipActivateBusiness": "Activate business",
     "tooltipDeactivateBusiness": "Deactivate business",
-    "moduleLoyaltyCoreTooltip": "Activate/Deactivate Loyalty Module (LoyalPyME Core)",
+    "moduleLoyaltyCoreTooltip": "Activate/Deactivate Loyalty Module (2Braind Loyalty Core)",
     "moduleCamareroTooltip": "Activate/Deactivate Waiter Module",
     "statusChangeSuccess": "Business '{{businessName}}' status changed to {{status}}.",
     "statusChangeError": "Error changing business status.",
     "moduleChangeSuccess": "Module '{{moduleName}}' {{status}} for business '{{businessName}}'.",
     "moduleChangeError": "Error changing module '{{moduleName}}' status.",
-    "moduleLoyaltyCore": "LoyalPyME Core",
-    "moduleCamarero": "LoyalPyME Waiter",
+    "moduleLoyaltyCore": "2Braind Loyalty Core",
+    "moduleCamarero": "2Braind Digital Menu",
     "businessFallbackName": "the business",
     "statusPaid": "Up to date",
     "statusPending": "Pending",
@@ -1042,9 +1042,9 @@
     "navLinkPickup": "Pickup Orders"
   },
   "homePage": {
-    "welcomeTitle": "Welcome to LoyalPyME",
+    "welcomeTitle": "Welcome to 2Braind Loyalty",
     "heroTitle": "Engage Customers and Digitize Your Service. All in One Place.",
-    "heroSubtitle": "LoyalPyME is the ultimate platform for restaurants, cafes, and SMEs to create loyalty programs and optimize their operations with a smart digital menu.",
+    "heroSubtitle": "2Braind Loyalty is the ultimate platform for restaurants, cafes, and SMEs to create loyalty programs and optimize their operations with a smart digital menu.",
     "ctaBusiness": "Create Business Account",
     "ctaLogin": "I already have an account",
     "featuresSection": {
@@ -1067,7 +1067,7 @@
     },
     "finalCta": {
       "title": "Ready to get started?",
-      "desc": "Create your account today and discover how LoyalPyME can transform your business."
+      "desc": "Create your account today and discover how 2Braind Loyalty can transform your business."
     }
   },
   "waiterOrderManagement": {

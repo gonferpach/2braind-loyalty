@@ -40,7 +40,7 @@ const Logo: React.FC<{ homePath: string }> = ({ homePath }) => (
         aria-label={homePath === "/" || homePath === "/login" ? "Ir a la página de inicio de sesión" : "Ir a mi panel principal"}
     >
         <img
-            src="/loyalpymelogo.jpg"
+            src="/2braind-loyalty-logo.jpg"
             alt="2Braind Loyalty Logo"
             style={{ height: '40px', width: 'auto', display: 'block' }}
         />

@@ -72,7 +72,7 @@
     "goToMenuButton": "Ver Menú"
   },
   "registerPage": {
-    "welcomeTitle": "¡Bienvenido a LoyalPyME!",
+    "welcomeTitle": "¡Bienvenido a 2Braind Loyalty!",
     "title": "Crea tu Cuenta de Cliente",
     "subtitle": "¿Ya tienes cuenta?",
     "loginLink": "Inicia sesión",
@@ -293,7 +293,7 @@
     "deleteError": "Error al eliminar",
     "confirmDeleteTitle": "Confirmar Eliminación",
     "confirmDeleteMessage": "¿Estás seguro? Esta acción no se puede deshacer.",
-    "adminTitle": "LoyalPyME Admin"
+    "adminTitle": "2Braind Loyalty Admin"
   },
   "adminOverview": {
     "welcome": "¡Bienvenido, {{name}}!",
@@ -659,14 +659,14 @@
     "noBusinesses": "No hay negocios registrados.",
     "tooltipActivateBusiness": "Activar negocio",
     "tooltipDeactivateBusiness": "Desactivar negocio",
-    "moduleLoyaltyCoreTooltip": "Activar/Desactivar Módulo Fidelización (LoyalPyME Core)",
+    "moduleLoyaltyCoreTooltip": "Activar/Desactivar Módulo Fidelización (2Braind Loyalty Core)",
     "moduleCamareroTooltip": "Activar/Desactivar Módulo Camarero",
     "statusChangeSuccess": "Estado del negocio '{{businessName}}' cambiado a {{status}}.",
     "statusChangeError": "Error al cambiar el estado del negocio.",
     "moduleChangeSuccess": "Módulo '{{moduleName}}' {{status}} para el negocio '{{businessName}}'.",
     "moduleChangeError": "Error al cambiar el estado del módulo '{{moduleName}}'.",
-    "moduleLoyaltyCore": "LoyalPyME Core",
-    "moduleCamarero": "LoyalPyME Camarero",
+    "moduleLoyaltyCore": "2Braind Loyalty Core",
+    "moduleCamarero": "2Braind Carta Digital",
     "businessFallbackName": "el negocio",
     "statusPaid": "Al día",
     "statusPending": "Pendiente",
@@ -1042,9 +1042,9 @@
     "navLinkPickup": "Recoger Pedidos"
   },
   "homePage": {
-    "welcomeTitle": "Bienvenido a LoyalPyME",
+    "welcomeTitle": "Bienvenido a 2Braind Loyalty",
     "heroTitle": "Fideliza Clientes y Digitaliza tu Servicio. Todo en un Mismo Lugar.",
-    "heroSubtitle": "LoyalPyME es la plataforma definitiva para que restaurantes, cafeterías y PYMES creen programas de lealtad y optimicen su operativa con una carta digital inteligente.",
+    "heroSubtitle": "2Braind Loyalty es la plataforma definitiva para que restaurantes, cafeterías y PYMES creen programas de lealtad y optimicen su operativa con una carta digital inteligente.",
     "ctaBusiness": "Crear Cuenta de Negocio",
     "ctaLogin": "Ya tengo una cuenta",
     "featuresSection": {
@@ -1067,7 +1067,7 @@
     },
     "finalCta": {
       "title": "¿Listo para empezar?",
-      "desc": "Crea tu cuenta hoy mismo y descubre cómo LoyalPyME puede transformar tu negocio."
+      "desc": "Crea tu cuenta hoy mismo y descubre cómo 2Braind Loyalty puede transformar tu negocio."
     }
   },
   "waiterOrderManagement": {
