@@ -9,6 +9,8 @@ import { IconGift, IconToolsKitchen2, IconAlertCircle } from '@tabler/icons-reac
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+import WalletCard from '../WalletCard';
+
 // Tipos
 import UserInfoDisplay, { type UserInfoDisplayProps } from '../../UserInfoDisplay';
 import QrValidationSection from '../../QrValidationSection';
@@ -91,6 +93,15 @@ const SummaryTab: React.FC<SummaryTabProps> = ({
                         onValidate={handleValidateQr} isValidating={validatingQr}
                         scannerOpened={scannerOpened} onOpenScanner={onOpenScanner} onCloseScanner={onCloseScanner}
                     />
+                    {userData?.id && userData?.businessSlug && (
+                        <WalletCard
+                            userId={userData.id}
+                            userName={userData.name || userData.email}
+                            businessSlug={userData.businessSlug}
+                            businessName={userData.businessName || '2Braind Loyalty'}
+                            userPoints={userPoints || 0}
+                        />
+                    )}
                 </Stack>
             </Grid.Col>
             <Grid.Col span={{ base: 12, md: 5 }}>
